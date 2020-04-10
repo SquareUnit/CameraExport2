@@ -1,0 +1,683 @@
+fileFormatVersion: 2
+guid: b2061d41ba7231b4e91c241db2ae34bd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: B_Eye_L
+    100002: B_Eye_R
+    100004: B_Eyebrow_Left01
+    100006: B_Eyebrow_Left02
+    100008: B_Eyebrow_Left03
+    100010: B_Eyebrow_Right01
+    100012: B_Eyebrow_Right02
+    100014: B_Eyebrow_Right03
+    100016: B_Eyelid_LeftDown
+    100018: B_Eyelid_LeftUp
+    100020: B_Eyelid_RightDown
+    100022: B_Eyelid_RightUp
+    100024: B_Lips_Down
+    100026: B_Lips_LeftCorner
+    100028: B_Lips_RightCorner
+    100030: B_Lips_Up
+    100032: B_Root_All
+    100034: Banc_Parc_01
+    100036: Bip001
+    100038: Bip001 1
+    100040: Bip001 Bip0001 Hat
+    100042: Bip001 Bip0001 HatNub
+    100044: Bip001 Footsteps
+    100046: Bip001 Footsteps 1
+    100048: Bip001 Head
+    100050: Bip001 Head 1
+    100052: Bip001 HeadNub
+    100054: Bip001 HeadNub 1
+    100056: Bip001 Jester_Grenade
+    100058: Bip001 Jester_Hair
+    100060: Bip001 Jester_HairNub
+    100062: Bip001 Jester_Jaw
+    100064: Bip001 Jester_Tuque
+    100066: Bip001 Jester_Tuque02
+    100068: Bip001 Jester_Tuque_L
+    100070: Bip001 Jester_Tuque_L02
+    100072: Bip001 Jester_Tuque_L03
+    100074: Bip001 Jester_Tuque_LNub
+    100076: Bip001 Jester_Tuque_R
+    100078: Bip001 Jester_Tuque_R02
+    100080: Bip001 Jester_Tuque_R03
+    100082: Bip001 Jester_Tuque_RNub
+    100084: Bip001 Jester_TuqueNub
+    100086: Bip001 Jester_Veste_01
+    100088: Bip001 Jester_Veste_0102
+    100090: Bip001 Jester_Veste_01Nub
+    100092: Bip001 Jester_Veste_02
+    100094: Bip001 Jester_Veste_0202
+    100096: Bip001 Jester_Veste_02Nub
+    100098: Bip001 Jester_Veste_03
+    100100: Bip001 Jester_Veste_0302
+    100102: Bip001 Jester_Veste_03Nub
+    100104: Bip001 Jester_Veste_04
+    100106: Bip001 Jester_Veste_0402
+    100108: Bip001 Jester_Veste_04Nub
+    100110: Bip001 L Calf
+    100112: Bip001 L Calf 1
+    100114: Bip001 L Clavicle
+    100116: Bip001 L Clavicle 1
+    100118: Bip001 L Finger0
+    100120: Bip001 L Finger0 1
+    100122: Bip001 L Finger01
+    100124: Bip001 L Finger01 1
+    100126: Bip001 L Finger02
+    100128: Bip001 L Finger02 1
+    100130: Bip001 L Finger0Nub
+    100132: Bip001 L Finger0Nub 1
+    100134: Bip001 L Finger1
+    100136: Bip001 L Finger1 1
+    100138: Bip001 L Finger11
+    100140: Bip001 L Finger11 1
+    100142: Bip001 L Finger12
+    100144: Bip001 L Finger12 1
+    100146: Bip001 L Finger1Nub
+    100148: Bip001 L Finger1Nub 1
+    100150: Bip001 L Finger2
+    100152: Bip001 L Finger2 1
+    100154: Bip001 L Finger21
+    100156: Bip001 L Finger21 1
+    100158: Bip001 L Finger22
+    100160: Bip001 L Finger22 1
+    100162: Bip001 L Finger2Nub
+    100164: Bip001 L Finger2Nub 1
+    100166: Bip001 L Finger3
+    100168: Bip001 L Finger3 1
+    100170: Bip001 L Finger31
+    100172: Bip001 L Finger31 1
+    100174: Bip001 L Finger32
+    100176: Bip001 L Finger32 1
+    100178: Bip001 L Finger3Nub
+    100180: Bip001 L Finger3Nub 1
+    100182: Bip001 L Finger4
+    100184: Bip001 L Finger4 1
+    100186: Bip001 L Finger41
+    100188: Bip001 L Finger41 1
+    100190: Bip001 L Finger42
+    100192: Bip001 L Finger42 1
+    100194: Bip001 L Finger4Nub
+    100196: Bip001 L Finger4Nub 1
+    100198: Bip001 L Foot
+    100200: Bip001 L Foot 1
+    100202: Bip001 L Forearm
+    100204: Bip001 L Forearm 1
+    100206: Bip001 L Hand
+    100208: Bip001 L Hand 1
+    100210: Bip001 L Thigh
+    100212: Bip001 L Thigh 1
+    100214: Bip001 L Toe0
+    100216: Bip001 L Toe0 1
+    100218: Bip001 L Toe0Nub
+    100220: Bip001 L Toe0Nub 1
+    100222: Bip001 L TwistBone_Shoulder
+    100224: Bip001 L TwistBone_Shoulder 1
+    100226: Bip001 L TwistBone_Wrist
+    100228: Bip001 L TwistBone_Wrist 1
+    100230: Bip001 L Upnode_Shoulder
+    100232: Bip001 L Upnode_Shoulder 1
+    100234: Bip001 L Upnode_Wrist
+    100236: Bip001 L Upnode_Wrist 1
+    100238: Bip001 L UpperArm
+    100240: Bip001 L UpperArm 1
+    100242: Bip001 Lover_Cape
+    100244: Bip001 Lover_Cape02
+    100246: Bip001 Lover_Cape03
+    100248: Bip001 Lover_CapeNub
+    100250: Bip001 Lover_Hair
+    100252: Bip001 Lover_HairNub
+    100254: Bip001 Neck
+    100256: Bip001 Neck 1
+    100258: Bip001 Pelvis
+    100260: Bip001 Pelvis 1
+    100262: Bip001 Prop1
+    100264: Bip001 Prop1 1
+    100266: Bip001 R Calf
+    100268: Bip001 R Calf 1
+    100270: Bip001 R Clavicle
+    100272: Bip001 R Clavicle 1
+    100274: Bip001 R Finger0
+    100276: Bip001 R Finger0 1
+    100278: Bip001 R Finger01
+    100280: Bip001 R Finger01 1
+    100282: Bip001 R Finger02
+    100284: Bip001 R Finger02 1
+    100286: Bip001 R Finger0Nub
+    100288: Bip001 R Finger0Nub 1
+    100290: Bip001 R Finger1
+    100292: Bip001 R Finger1 1
+    100294: Bip001 R Finger11
+    100296: Bip001 R Finger11 1
+    100298: Bip001 R Finger12
+    100300: Bip001 R Finger12 1
+    100302: Bip001 R Finger1Nub
+    100304: Bip001 R Finger1Nub 1
+    100306: Bip001 R Finger2
+    100308: Bip001 R Finger2 1
+    100310: Bip001 R Finger21
+    100312: Bip001 R Finger21 1
+    100314: Bip001 R Finger22
+    100316: Bip001 R Finger22 1
+    100318: Bip001 R Finger2Nub
+    100320: Bip001 R Finger2Nub 1
+    100322: Bip001 R Finger3
+    100324: Bip001 R Finger3 1
+    100326: Bip001 R Finger31
+    100328: Bip001 R Finger31 1
+    100330: Bip001 R Finger32
+    100332: Bip001 R Finger32 1
+    100334: Bip001 R Finger3Nub
+    100336: Bip001 R Finger3Nub 1
+    100338: Bip001 R Finger4
+    100340: Bip001 R Finger4 1
+    100342: Bip001 R Finger41
+    100344: Bip001 R Finger41 1
+    100346: Bip001 R Finger42
+    100348: Bip001 R Finger42 1
+    100350: Bip001 R Finger4Nub
+    100352: Bip001 R Finger4Nub 1
+    100354: Bip001 R Foot
+    100356: Bip001 R Foot 1
+    100358: Bip001 R Forearm
+    100360: Bip001 R Forearm 1
+    100362: Bip001 R Hand
+    100364: Bip001 R Hand 1
+    100366: Bip001 R Thigh
+    100368: Bip001 R Thigh 1
+    100370: Bip001 R Toe0
+    100372: Bip001 R Toe0 1
+    100374: Bip001 R Toe0Nub
+    100376: Bip001 R Toe0Nub 1
+    100378: Bip001 R TwistBone_Shoulder
+    100380: Bip001 R TwistBone_Shoulder 1
+    100382: Bip001 R TwistBone_Wrist
+    100384: Bip001 R TwistBone_Wrist 1
+    100386: Bip001 R Upnode_Shoulder
+    100388: Bip001 R Upnode_Shoulder 1
+    100390: Bip001 R Upnode_Wrist
+    100392: Bip001 R Upnode_Wrist 1
+    100394: Bip001 R UpperArm
+    100396: Bip001 R UpperArm 1
+    100398: Bip001 Sage_Colier
+    100400: Bip001 Sage_ColierNub
+    100402: Bip001 Sage_Sac_L
+    100404: Bip001 Sage_Sac_LNub
+    100406: Bip001 Sage_Sac_R
+    100408: Bip001 Sage_Sac_RNub
+    100410: Bip001 Sage_Tuque
+    100412: Bip001 Sage_Tuque02
+    100414: Bip001 Sage_TuqueNub
+    100416: Bip001 Spine
+    100418: Bip001 Spine 1
+    100420: Bip001 Spine1
+    100422: Bip001 Spine1 1
+    100424: Bip001 Spine2
+    100426: Bip001 Spine2 1
+    100428: Ctrl_Eyebrow_Left02
+    100430: Ctrl_Eyebrow_Right005
+    100432: Ctrl_Eyebrow_Right006
+    100434: Ctrl_Eyebrow_Right007
+    100436: Ctrl_Eyebrow_Right01
+    100438: Ctrl_Eyebrow_Right02
+    100440: Ctrl_Eyebrow_Right03
+    100442: Ctrl_Eyelid_LeftDown
+    100444: Ctrl_Eyelid_LeftUp
+    100446: Ctrl_Eyelid_RightDown
+    100448: Ctrl_Eyelid_RightUp
+    100450: Ctrl_Jester_Grenade
+    100452: Ctrl_Jester_Jaw
+    100454: Ctrl_L_Eye
+    100456: Ctrl_Lips_Down
+    100458: Ctrl_Lips_LeftCorner
+    100460: Ctrl_Lips_RightCorner
+    100462: Ctrl_MasterEye
+    100464: Ctrl_R_Eye
+    100466: Dummy001
+    100468: Dummy002
+    100470: Dummy003
+    100472: H_GrenadeAttach
+    100474: HeadLess_H_01_LOD0
+    100476: Jester_LR001
+    100478: P_Jaw
+    100480: RootMotion
+    100482: RootMotion 1
+    100484: //RootNode
+    100486: Mannequin_Body
+    100488: REtopoMannequin:Group17
+    100490: group8
+    100492: Mannequin_Head
+    400000: B_Eye_L
+    400002: B_Eye_R
+    400004: B_Eyebrow_Left01
+    400006: B_Eyebrow_Left02
+    400008: B_Eyebrow_Left03
+    400010: B_Eyebrow_Right01
+    400012: B_Eyebrow_Right02
+    400014: B_Eyebrow_Right03
+    400016: B_Eyelid_LeftDown
+    400018: B_Eyelid_LeftUp
+    400020: B_Eyelid_RightDown
+    400022: B_Eyelid_RightUp
+    400024: B_Lips_Down
+    400026: B_Lips_LeftCorner
+    400028: B_Lips_RightCorner
+    400030: B_Lips_Up
+    400032: B_Root_All
+    400034: Banc_Parc_01
+    400036: Bip001
+    400038: Bip001 1
+    400040: Bip001 Bip0001 Hat
+    400042: Bip001 Bip0001 HatNub
+    400044: Bip001 Footsteps
+    400046: Bip001 Footsteps 1
+    400048: Bip001 Head
+    400050: Bip001 Head 1
+    400052: Bip001 HeadNub
+    400054: Bip001 HeadNub 1
+    400056: Bip001 Jester_Grenade
+    400058: Bip001 Jester_Hair
+    400060: Bip001 Jester_HairNub
+    400062: Bip001 Jester_Jaw
+    400064: Bip001 Jester_Tuque
+    400066: Bip001 Jester_Tuque02
+    400068: Bip001 Jester_Tuque_L
+    400070: Bip001 Jester_Tuque_L02
+    400072: Bip001 Jester_Tuque_L03
+    400074: Bip001 Jester_Tuque_LNub
+    400076: Bip001 Jester_Tuque_R
+    400078: Bip001 Jester_Tuque_R02
+    400080: Bip001 Jester_Tuque_R03
+    400082: Bip001 Jester_Tuque_RNub
+    400084: Bip001 Jester_TuqueNub
+    400086: Bip001 Jester_Veste_01
+    400088: Bip001 Jester_Veste_0102
+    400090: Bip001 Jester_Veste_01Nub
+    400092: Bip001 Jester_Veste_02
+    400094: Bip001 Jester_Veste_0202
+    400096: Bip001 Jester_Veste_02Nub
+    400098: Bip001 Jester_Veste_03
+    400100: Bip001 Jester_Veste_0302
+    400102: Bip001 Jester_Veste_03Nub
+    400104: Bip001 Jester_Veste_04
+    400106: Bip001 Jester_Veste_0402
+    400108: Bip001 Jester_Veste_04Nub
+    400110: Bip001 L Calf
+    400112: Bip001 L Calf 1
+    400114: Bip001 L Clavicle
+    400116: Bip001 L Clavicle 1
+    400118: Bip001 L Finger0
+    400120: Bip001 L Finger0 1
+    400122: Bip001 L Finger01
+    400124: Bip001 L Finger01 1
+    400126: Bip001 L Finger02
+    400128: Bip001 L Finger02 1
+    400130: Bip001 L Finger0Nub
+    400132: Bip001 L Finger0Nub 1
+    400134: Bip001 L Finger1
+    400136: Bip001 L Finger1 1
+    400138: Bip001 L Finger11
+    400140: Bip001 L Finger11 1
+    400142: Bip001 L Finger12
+    400144: Bip001 L Finger12 1
+    400146: Bip001 L Finger1Nub
+    400148: Bip001 L Finger1Nub 1
+    400150: Bip001 L Finger2
+    400152: Bip001 L Finger2 1
+    400154: Bip001 L Finger21
+    400156: Bip001 L Finger21 1
+    400158: Bip001 L Finger22
+    400160: Bip001 L Finger22 1
+    400162: Bip001 L Finger2Nub
+    400164: Bip001 L Finger2Nub 1
+    400166: Bip001 L Finger3
+    400168: Bip001 L Finger3 1
+    400170: Bip001 L Finger31
+    400172: Bip001 L Finger31 1
+    400174: Bip001 L Finger32
+    400176: Bip001 L Finger32 1
+    400178: Bip001 L Finger3Nub
+    400180: Bip001 L Finger3Nub 1
+    400182: Bip001 L Finger4
+    400184: Bip001 L Finger4 1
+    400186: Bip001 L Finger41
+    400188: Bip001 L Finger41 1
+    400190: Bip001 L Finger42
+    400192: Bip001 L Finger42 1
+    400194: Bip001 L Finger4Nub
+    400196: Bip001 L Finger4Nub 1
+    400198: Bip001 L Foot
+    400200: Bip001 L Foot 1
+    400202: Bip001 L Forearm
+    400204: Bip001 L Forearm 1
+    400206: Bip001 L Hand
+    400208: Bip001 L Hand 1
+    400210: Bip001 L Thigh
+    400212: Bip001 L Thigh 1
+    400214: Bip001 L Toe0
+    400216: Bip001 L Toe0 1
+    400218: Bip001 L Toe0Nub
+    400220: Bip001 L Toe0Nub 1
+    400222: Bip001 L TwistBone_Shoulder
+    400224: Bip001 L TwistBone_Shoulder 1
+    400226: Bip001 L TwistBone_Wrist
+    400228: Bip001 L TwistBone_Wrist 1
+    400230: Bip001 L Upnode_Shoulder
+    400232: Bip001 L Upnode_Shoulder 1
+    400234: Bip001 L Upnode_Wrist
+    400236: Bip001 L Upnode_Wrist 1
+    400238: Bip001 L UpperArm
+    400240: Bip001 L UpperArm 1
+    400242: Bip001 Lover_Cape
+    400244: Bip001 Lover_Cape02
+    400246: Bip001 Lover_Cape03
+    400248: Bip001 Lover_CapeNub
+    400250: Bip001 Lover_Hair
+    400252: Bip001 Lover_HairNub
+    400254: Bip001 Neck
+    400256: Bip001 Neck 1
+    400258: Bip001 Pelvis
+    400260: Bip001 Pelvis 1
+    400262: Bip001 Prop1
+    400264: Bip001 Prop1 1
+    400266: Bip001 R Calf
+    400268: Bip001 R Calf 1
+    400270: Bip001 R Clavicle
+    400272: Bip001 R Clavicle 1
+    400274: Bip001 R Finger0
+    400276: Bip001 R Finger0 1
+    400278: Bip001 R Finger01
+    400280: Bip001 R Finger01 1
+    400282: Bip001 R Finger02
+    400284: Bip001 R Finger02 1
+    400286: Bip001 R Finger0Nub
+    400288: Bip001 R Finger0Nub 1
+    400290: Bip001 R Finger1
+    400292: Bip001 R Finger1 1
+    400294: Bip001 R Finger11
+    400296: Bip001 R Finger11 1
+    400298: Bip001 R Finger12
+    400300: Bip001 R Finger12 1
+    400302: Bip001 R Finger1Nub
+    400304: Bip001 R Finger1Nub 1
+    400306: Bip001 R Finger2
+    400308: Bip001 R Finger2 1
+    400310: Bip001 R Finger21
+    400312: Bip001 R Finger21 1
+    400314: Bip001 R Finger22
+    400316: Bip001 R Finger22 1
+    400318: Bip001 R Finger2Nub
+    400320: Bip001 R Finger2Nub 1
+    400322: Bip001 R Finger3
+    400324: Bip001 R Finger3 1
+    400326: Bip001 R Finger31
+    400328: Bip001 R Finger31 1
+    400330: Bip001 R Finger32
+    400332: Bip001 R Finger32 1
+    400334: Bip001 R Finger3Nub
+    400336: Bip001 R Finger3Nub 1
+    400338: Bip001 R Finger4
+    400340: Bip001 R Finger4 1
+    400342: Bip001 R Finger41
+    400344: Bip001 R Finger41 1
+    400346: Bip001 R Finger42
+    400348: Bip001 R Finger42 1
+    400350: Bip001 R Finger4Nub
+    400352: Bip001 R Finger4Nub 1
+    400354: Bip001 R Foot
+    400356: Bip001 R Foot 1
+    400358: Bip001 R Forearm
+    400360: Bip001 R Forearm 1
+    400362: Bip001 R Hand
+    400364: Bip001 R Hand 1
+    400366: Bip001 R Thigh
+    400368: Bip001 R Thigh 1
+    400370: Bip001 R Toe0
+    400372: Bip001 R Toe0 1
+    400374: Bip001 R Toe0Nub
+    400376: Bip001 R Toe0Nub 1
+    400378: Bip001 R TwistBone_Shoulder
+    400380: Bip001 R TwistBone_Shoulder 1
+    400382: Bip001 R TwistBone_Wrist
+    400384: Bip001 R TwistBone_Wrist 1
+    400386: Bip001 R Upnode_Shoulder
+    400388: Bip001 R Upnode_Shoulder 1
+    400390: Bip001 R Upnode_Wrist
+    400392: Bip001 R Upnode_Wrist 1
+    400394: Bip001 R UpperArm
+    400396: Bip001 R UpperArm 1
+    400398: Bip001 Sage_Colier
+    400400: Bip001 Sage_ColierNub
+    400402: Bip001 Sage_Sac_L
+    400404: Bip001 Sage_Sac_LNub
+    400406: Bip001 Sage_Sac_R
+    400408: Bip001 Sage_Sac_RNub
+    400410: Bip001 Sage_Tuque
+    400412: Bip001 Sage_Tuque02
+    400414: Bip001 Sage_TuqueNub
+    400416: Bip001 Spine
+    400418: Bip001 Spine 1
+    400420: Bip001 Spine1
+    400422: Bip001 Spine1 1
+    400424: Bip001 Spine2
+    400426: Bip001 Spine2 1
+    400428: Ctrl_Eyebrow_Left02
+    400430: Ctrl_Eyebrow_Right005
+    400432: Ctrl_Eyebrow_Right006
+    400434: Ctrl_Eyebrow_Right007
+    400436: Ctrl_Eyebrow_Right01
+    400438: Ctrl_Eyebrow_Right02
+    400440: Ctrl_Eyebrow_Right03
+    400442: Ctrl_Eyelid_LeftDown
+    400444: Ctrl_Eyelid_LeftUp
+    400446: Ctrl_Eyelid_RightDown
+    400448: Ctrl_Eyelid_RightUp
+    400450: Ctrl_Jester_Grenade
+    400452: Ctrl_Jester_Jaw
+    400454: Ctrl_L_Eye
+    400456: Ctrl_Lips_Down
+    400458: Ctrl_Lips_LeftCorner
+    400460: Ctrl_Lips_RightCorner
+    400462: Ctrl_MasterEye
+    400464: Ctrl_R_Eye
+    400466: Dummy001
+    400468: Dummy002
+    400470: Dummy003
+    400472: H_GrenadeAttach
+    400474: HeadLess_H_01_LOD0
+    400476: Jester_LR001
+    400478: P_Jaw
+    400480: RootMotion
+    400482: RootMotion 1
+    400484: //RootNode
+    400486: Mannequin_Body
+    400488: REtopoMannequin:Group17
+    400490: group8
+    400492: Mannequin_Head
+    2100000: 'Material #15'
+    2100002: No Name
+    2100004: HeadLess_Homme_Remesher
+    2100006: Skin
+    2100008: Accessoires
+    2100010: Clothes Lower Body
+    2100012: Clothes Upperbody
+    2100014: Mannequin
+    2300000: Banc_Parc_01
+    2300002: Ctrl_Eyebrow_Left02
+    2300004: Ctrl_Eyebrow_Right005
+    2300006: Ctrl_Eyebrow_Right006
+    2300008: Ctrl_Eyebrow_Right007
+    2300010: Ctrl_Eyebrow_Right01
+    2300012: Ctrl_Eyebrow_Right02
+    2300014: Ctrl_Eyebrow_Right03
+    2300016: Ctrl_Eyelid_LeftDown
+    2300018: Ctrl_Eyelid_LeftUp
+    2300020: Ctrl_Eyelid_RightDown
+    2300022: Ctrl_Eyelid_RightUp
+    2300024: Ctrl_Jester_Grenade
+    2300026: Ctrl_Jester_Jaw
+    2300028: Ctrl_Lips_Down
+    2300030: Ctrl_Lips_LeftCorner
+    2300032: Ctrl_Lips_RightCorner
+    3300000: Banc_Parc_01
+    3300002: Ctrl_Eyebrow_Left02
+    3300004: Ctrl_Eyebrow_Right005
+    3300006: Ctrl_Eyebrow_Right006
+    3300008: Ctrl_Eyebrow_Right007
+    3300010: Ctrl_Eyebrow_Right01
+    3300012: Ctrl_Eyebrow_Right02
+    3300014: Ctrl_Eyebrow_Right03
+    3300016: Ctrl_Eyelid_LeftDown
+    3300018: Ctrl_Eyelid_LeftUp
+    3300020: Ctrl_Eyelid_RightDown
+    3300022: Ctrl_Eyelid_RightUp
+    3300024: Ctrl_Jester_Grenade
+    3300026: Ctrl_Jester_Jaw
+    3300028: Ctrl_Lips_Down
+    3300030: Ctrl_Lips_LeftCorner
+    3300032: Ctrl_Lips_RightCorner
+    4300000: Banc_Parc_01
+    4300002: Ctrl_Lips_RightCorner
+    4300004: Ctrl_Lips_LeftCorner
+    4300006: Ctrl_Eyebrow_Right03
+    4300008: Ctrl_Eyebrow_Right02
+    4300010: Ctrl_Eyebrow_Right01
+    4300012: Ctrl_Eyebrow_Right005
+    4300014: Ctrl_Eyebrow_Left02
+    4300016: Ctrl_Eyebrow_Right006
+    4300018: Ctrl_Eyebrow_Right007
+    4300020: Ctrl_Eyelid_RightUp
+    4300022: Ctrl_Eyelid_RightDown
+    4300024: Ctrl_Eyelid_LeftUp
+    4300026: Ctrl_Eyelid_LeftDown
+    4300028: Ctrl_Jester_Jaw
+    4300030: Ctrl_Lips_Down
+    4300032: Ctrl_Jester_Grenade
+    4300034: HeadLess_H_01_LOD0
+    4300036: Jester_LR001
+    4300038: Mannequin_Body
+    4300040: Mannequin_Head
+    9500000: //RootNode
+    13700000: HeadLess_H_01_LOD0
+    13700002: Jester_LR001
+    13700004: Mannequin_Body
+    13700006: Mannequin_Head
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Accessoires
+    second: {fileID: 2100000, guid: d98010c6f44bd2e44b2fe93430f2f894, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clothes Lower Body
+    second: {fileID: 2100000, guid: f06f0c7a6162d4c4f984716a879255ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clothes Upperbody
+    second: {fileID: 2100000, guid: 781242d712c1e1c4a863530f53926eea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mannequin
+    second: {fileID: 2100000, guid: a86d1da3214ea7143ab3a436f9bbbfca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #15'
+    second: {fileID: 2100000, guid: ec267f403352cce4284d4898890af793, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: 84b84c1893a6f4f4c8dc94eb71141bc6, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: B_Root_All
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

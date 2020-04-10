@@ -1,0 +1,412 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8521788778450596161
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5332004925872947213, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_Name
+      value: PoolingManager Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839926119514634042, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839926119514634042, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839926119514634042, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839926119514634042, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839926119514634042, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839926119514634042, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839926119514634042, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839926119514634042, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839926119514634042, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839926119514634042, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839926119514634042, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.size
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[0].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 2926936483999347563, guid: 6dbdc8f04e4da2b43905110c4ed10d3b,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[0].name
+      value: FX_Blank_RunDust
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[1].name
+      value: FX_Blank_Shock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 741170985231286281, guid: c896b289b4ea908419c92147f73321f6,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[1].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[2].name
+      value: FX_Blank_Stun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 7397596852577209563, guid: e6e8bfd9d25375f419730c48ede7cf2e,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[2].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[3].name
+      value: FX_Blank_TurnDust
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 8610245180526704445, guid: 656ab73cf625a8248b8de0acf193bfa6,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[3].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[4].name
+      value: FX_Blank_JumpStop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[4].prefab
+      value: 
+      objectReference: {fileID: 4902035926143040718, guid: 1f2e518181031d1418bb9d1f9fb3d0aa,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[4].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[5].name
+      value: FX_Blank_Vision
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[5].prefab
+      value: 
+      objectReference: {fileID: 4296951310737000464, guid: 99d950b652f3fd14c85048ae0371a164,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[5].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[6].name
+      value: FX_Blank_RunDust02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[6].prefab
+      value: 
+      objectReference: {fileID: 3167346118999387957, guid: 70297db30e63536409a7b42fb08eb69d,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[6].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[7].name
+      value: FX_Drone_Pouet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[7].prefab
+      value: 
+      objectReference: {fileID: 3158079448758318065, guid: 496d26ae6564c7f4b86e29b3ebc1f6bc,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[7].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[8].name
+      value: FX_Drone_Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[8].prefab
+      value: 
+      objectReference: {fileID: 3588049509275766458, guid: bf78a4699f69b9641824170a9c8d50fd,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[8].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[9].name
+      value: FX_Drone_Detection
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[9].prefab
+      value: 
+      objectReference: {fileID: 6309619170794276516, guid: 51ae4ef74cc5d5341a0f57cf9a41afe4,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[9].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[10].name
+      value: FX_Drone_Distortion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[10].prefab
+      value: 
+      objectReference: {fileID: 5572029846120654684, guid: 757d567e45fa8ea478884d60af236e86,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[10].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[11].name
+      value: FX_HeadHunter_Detection
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[11].prefab
+      value: 
+      objectReference: {fileID: 6500795449809651532, guid: cda06048806af444dbc1c39aa1caea0c,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[11].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[12].name
+      value: FX_HeadHunter_Drool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[12].prefab
+      value: 
+      objectReference: {fileID: 3206748862228428257, guid: ceb2532e45015c14c987ed5edf55f258,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[12].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[13].name
+      value: FX_HeadHunter_SlobDrop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[13].prefab
+      value: 
+      objectReference: {fileID: 6193587702484670564, guid: 0281d674cc071b14a94d7e348633752d,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[13].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[14].name
+      value: FX_Trick_Smoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[14].prefab
+      value: 
+      objectReference: {fileID: 4809900632275678541, guid: 0423462465a45324ca057a44e23d2de1,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[14].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[15].name
+      value: FX_Trick_Guitar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[15].prefab
+      value: 
+      objectReference: {fileID: 4536667300040733955, guid: c3d596ca516b8374a9b8c5d14353827a,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[15].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[16].name
+      value: FX_Drone_ChargeSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[16].prefab
+      value: 
+      objectReference: {fileID: 994702612160512870, guid: 5b09dea203d2eb84c9d94b747e495a24,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[16].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[17].name
+      value: FX_Drone_ChargeTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[17].prefab
+      value: 
+      objectReference: {fileID: 9212988563606329544, guid: b8e62673f1b32794e8355a0625da6890,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[17].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[18].name
+      value: FX_Valve_Steam
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[18].prefab
+      value: 
+      objectReference: {fileID: 2842190089846608285, guid: 7d9892ba027d0a8499eda397206a2696,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[18].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[19].name
+      value: FX_SavePoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[19].prefab
+      value: 
+      objectReference: {fileID: 408241089156835228, guid: a7eb2f0def70e124ea897ad7db65df1c,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[19].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[20].name
+      value: FX_Pantin_SolvedGlow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[20].prefab
+      value: 
+      objectReference: {fileID: 5197536216002358444, guid: 7071ee6c6b28877498a24d6f72c99baf,
+        type: 3}
+    - target: {fileID: 1527401282031127516, guid: e8a8aa20ac6610a409426708cf63ab43,
+        type: 3}
+      propertyPath: poolArray.Array.data[20].quantity
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8a8aa20ac6610a409426708cf63ab43, type: 3}
