@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: d94400eb9de5e2d459429373eda4045d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Blankgc
+  fontNames:
+  - Blankgc
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 11b4867ceb6da6241ad493034538a842, type: 3}
+  - {fileID: 12800000, guid: ee9a45ec61f640e42b06d39d5c04416a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
