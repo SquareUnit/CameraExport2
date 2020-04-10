@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dissolve_Effect_Neutre_Cam
+  m_Shader: {fileID: 4800000, guid: d334eea910c9a3944bfff7a9cf723175, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.08
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Float12: 1.75
+    - _Float14: 1.5
+    - _Float15: 0.2
+    - _Float16: 2
+    - _Float17: 1.53
+    - _Float20: 500
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Hardness: 2
+    - _Metallic: 0
+    - _Mode: 0
+    - _Noise_Size: 0.5
+    - _Noise_Speed: 0.1517647
+    - _Noise_Tiling: 0.7
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Radius: 2.75
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _Speed: 0.5
+    - _SrcBlend: 1
+    - _Tiling: 1.55
+    - _UVSec: 0
+    - _Vertex_Offseet_Power: 5
+    - _Vertex_Offset_Frequency: 1.53
+    - _Vertex_Offset_Speed: 0.2
+    - _ZWrite: 1
+    - __dirty: 0
+    - _metallic: 0
+    - _occlusion: 1
+    - _radius: 0
+    - _roughness: 0.5
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 0}
+    - _Color3: {r: 0.5254902, g: 0.48235294, b: 0.52156866, a: 0}
+    - _Color_01: {r: 0.01183695, g: 0.1261925, b: 0.1320755, a: 0}
+    - _Color_02: {r: 1, g: 0.7313327, b: 0.6179246, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _avatarOffset: {r: 0, g: -1, b: 0, a: 0}
+    - _avatarPos: {r: 0, g: 0, b: 0, a: 0}
+    - _color1: {r: 0.5254902, g: 0.48235294, b: 0.52156866, a: 0}
+    - _color2: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 0}

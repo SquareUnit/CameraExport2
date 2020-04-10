@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6808453090950557434
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152517957281840901, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_Name
+      value: FX_Pers2x1_5x1_Inactive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167177169170106821, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167177169170106821, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167177169170106821, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167177169170106821, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167177169170106821, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167177169170106821, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167177169170106821, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167177169170106821, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167177169170106821, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167177169170106821, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167177169170106821, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596846964911910583, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596846964911910583, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596846964911910583, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596846964911910583, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: NoiseModule.frequency
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596846964911910583, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: NoiseModule.scrollSpeed.scalar
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596846964911910583, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: VelocityModule.y.minScalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596846964911910583, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596846964911910583, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596846964911910583, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596846964911910583, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630047598106020496, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_Name
+      value: FX_Pers2x1_5x1_Traces
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567462337623669897, guid: f4562f40833695e418a95b1d10428ca6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f4562f40833695e418a95b1d10428ca6, type: 3}
