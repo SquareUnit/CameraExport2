@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 843c1d040b0de24468015e833122e2cf
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Etage1_CoinExterieur_Bordure_3x4x2_077
+    100002: Etage1_CoinExterieur_Bordure_3x4x2_078
+    100004: Etage1_CoinExterieur_Bordure_3x4x2_079
+    100006: Etage1_CoinExterieur_Bordure_3x4x2_080
+    100008: Etage1_CoinExterieur_Bordure_3x4x2_081
+    100010: Etage1_CoinExterieur_Bordure_3x4x2_082
+    100012: Etage1_CoinExterieur_Bordure_3x4x2_083
+    100014: Etage1_CoinExterieur_Bordure_3x4x2_084
+    100016: Etage1_Facade_Neutre_4x4x0_1091
+    100018: //RootNode
+    100020: Toit_CoinExterieur_Bordure_2x4x2_068
+    100022: Toit_CoinExterieur_Bordure_2x4x2_069
+    100024: Toit_CoinExterieur_Bordure_2x4x2_070
+    100026: Toit_CoinExterieur_Bordure_2x4x2_071
+    400000: Etage1_CoinExterieur_Bordure_3x4x2_077
+    400002: Etage1_CoinExterieur_Bordure_3x4x2_078
+    400004: Etage1_CoinExterieur_Bordure_3x4x2_079
+    400006: Etage1_CoinExterieur_Bordure_3x4x2_080
+    400008: Etage1_CoinExterieur_Bordure_3x4x2_081
+    400010: Etage1_CoinExterieur_Bordure_3x4x2_082
+    400012: Etage1_CoinExterieur_Bordure_3x4x2_083
+    400014: Etage1_CoinExterieur_Bordure_3x4x2_084
+    400016: Etage1_Facade_Neutre_4x4x0_1091
+    400018: //RootNode
+    400020: Toit_CoinExterieur_Bordure_2x4x2_068
+    400022: Toit_CoinExterieur_Bordure_2x4x2_069
+    400024: Toit_CoinExterieur_Bordure_2x4x2_070
+    400026: Toit_CoinExterieur_Bordure_2x4x2_071
+    2100000: Brick
+    2100002: Metal_Trim
+    2100004: Concrete
+    2100006: Metal_Roof
+    2300000: Etage1_CoinExterieur_Bordure_3x4x2_077
+    2300002: Etage1_CoinExterieur_Bordure_3x4x2_078
+    2300004: Etage1_CoinExterieur_Bordure_3x4x2_079
+    2300006: Etage1_CoinExterieur_Bordure_3x4x2_080
+    2300008: Etage1_CoinExterieur_Bordure_3x4x2_081
+    2300010: Etage1_CoinExterieur_Bordure_3x4x2_082
+    2300012: Etage1_CoinExterieur_Bordure_3x4x2_083
+    2300014: Etage1_CoinExterieur_Bordure_3x4x2_084
+    2300016: Etage1_Facade_Neutre_4x4x0_1091
+    2300018: Toit_CoinExterieur_Bordure_2x4x2_068
+    2300020: Toit_CoinExterieur_Bordure_2x4x2_069
+    2300022: Toit_CoinExterieur_Bordure_2x4x2_070
+    2300024: Toit_CoinExterieur_Bordure_2x4x2_071
+    3300000: Etage1_CoinExterieur_Bordure_3x4x2_077
+    3300002: Etage1_CoinExterieur_Bordure_3x4x2_078
+    3300004: Etage1_CoinExterieur_Bordure_3x4x2_079
+    3300006: Etage1_CoinExterieur_Bordure_3x4x2_080
+    3300008: Etage1_CoinExterieur_Bordure_3x4x2_081
+    3300010: Etage1_CoinExterieur_Bordure_3x4x2_082
+    3300012: Etage1_CoinExterieur_Bordure_3x4x2_083
+    3300014: Etage1_CoinExterieur_Bordure_3x4x2_084
+    3300016: Etage1_Facade_Neutre_4x4x0_1091
+    3300018: Toit_CoinExterieur_Bordure_2x4x2_068
+    3300020: Toit_CoinExterieur_Bordure_2x4x2_069
+    3300022: Toit_CoinExterieur_Bordure_2x4x2_070
+    3300024: Toit_CoinExterieur_Bordure_2x4x2_071
+    4300000: Etage1_CoinExterieur_Bordure_3x4x2_077
+    4300002: Etage1_CoinExterieur_Bordure_3x4x2_078
+    4300004: Etage1_CoinExterieur_Bordure_3x4x2_079
+    4300006: Etage1_CoinExterieur_Bordure_3x4x2_080
+    4300008: Etage1_CoinExterieur_Bordure_3x4x2_081
+    4300010: Etage1_CoinExterieur_Bordure_3x4x2_082
+    4300012: Etage1_CoinExterieur_Bordure_3x4x2_083
+    4300014: Etage1_CoinExterieur_Bordure_3x4x2_084
+    4300016: Etage1_Facade_Neutre_4x4x0_1091
+    4300018: Toit_CoinExterieur_Bordure_2x4x2_068
+    4300020: Toit_CoinExterieur_Bordure_2x4x2_069
+    4300022: Toit_CoinExterieur_Bordure_2x4x2_070
+    4300024: Toit_CoinExterieur_Bordure_2x4x2_071
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

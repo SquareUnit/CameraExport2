@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Drone_Mask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Drone_Metal_01_LOD0
+    m_Weight: 0
+  - m_Path: Root
+    m_Weight: 0
+  - m_Path: Root/B_Master
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_Ear_L
+    m_Weight: 1
+  - m_Path: Root/B_Master/B_Ear_R
+    m_Weight: 1
+  - m_Path: Root/B_Master/B_EyeAttach
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_EyeAttach/B_Eye
+    m_Weight: 1
+  - m_Path: Root/B_Master/B_EyeAttach/B_Eye/B_EyeNub
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_Head
+    m_Weight: 1
+  - m_Path: Root/B_Master/B_HipsAttach
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_F
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_F/B_Arm01_F
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_F/B_Arm01_F/B_Arm02_F
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_F/B_Arm01_F/B_Arm02_F/B_Arm03_F
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_L
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_L/B_Arm01_L
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_L/B_Arm01_L/B_Arm02_L
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_L/B_Arm01_L/B_Arm02_L/B_Arm03_L
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_R
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_R/B_Arm01_R
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_R/B_Arm01_R/B_Arm02_R
+    m_Weight: 0
+  - m_Path: Root/B_Master/B_HipsAttach/B_Hips/B_ArmAttach_R/B_Arm01_R/B_Arm02_R/B_Arm03_R
+    m_Weight: 0
