@@ -58,18 +58,6 @@ public class PlayerCamera : MonoBehaviour
     private RaycastHit hitRight;
     private RaycastHit hitLeft;
 
-    // Shader dissolve params
-    private float a3 = 2.1f, b3 = 4.0f;
-    private MeshRenderer collMeshRend;
-    private List<Material> dissolvedMats = new List<Material>();
-    private float lastHitDist;
-    private float dissolveIncr, targetDissolveRad, dissolveVal;
-    private bool canDecrementDissolveRad;
-    private float delayToFullDissolve = 0.5f;
-    private bool canIncrDissolveTStamp = true, canDecrDissolveTStamp = true;
-    private float incrDissolveTStamp, decrDissolveTStamp;
-    private float currShaderDissRadius = 0.0f;
-
     // Camera dolly params
     [HideInInspector] public float desiredDollyDst;
     [HideInInspector] public float camDollyMinDist = 2.4f;
@@ -225,75 +213,16 @@ public class PlayerCamera : MonoBehaviour
         if (raycastsDebug) Debug.DrawRay(camTarget.transform.position, dirToCamera, Color.white);
         if (Physics.Raycast(camTarget.tr.position, dirToCamera, out hit, camDollyMaxDist, obstaclesLayerMask))
         {
-            if (hit.collider.tag != "AllowCameraDissolve")
+            float product = Vector3.Dot(hit.normal, Vector3.up);
+            if (product <= 0.3 && product >= -0.3) //TODO : Handle ceilings(|| hit.normal.y < 0))
             {
-                canIncrDissolveTStamp = true;
-                canDecrDissolveTStamp = true;
-                float product = Vector3.Dot(hit.normal, Vector3.up);
-                if (product <= 0.3 && product >= -0.3) //TODO : Handle ceilings(|| hit.normal.y < 0))
-                {
-                    IsCollisionValid();
-                }
-                else isColliding = false;
+                IsCollisionValid();
             }
-            else if (hit.collider.tag == "AllowCameraDissolve")
-            {
-                isColliding = false;
-                canDecrDissolveTStamp = true;
-                if (canIncrDissolveTStamp)
-                {
-                    canIncrDissolveTStamp = false;
-                    incrDissolveTStamp = Time.time;
-                }
-
-                lastHitDist = Vector3.Distance(camTarget.tr.position, hit.point);
-                if (lastHitDist < 0.3f) lastHitDist = 0.3f;
-
-                targetDissolveRad = (a3 * lastHitDist) + b3;
-                float t = (Time.time - incrDissolveTStamp) / delayToFullDissolve;
-                dissolveVal = Mathf.SmoothStep(currShaderDissRadius, targetDissolveRad, t);
-
-                collMeshRend = hit.transform.parent.GetComponentInChildren<MeshRenderer>();
-                foreach (Material i in collMeshRend.materials)
-                {
-                    if (!dissolvedMats.Contains(i))
-                    {
-                        dissolvedMats.Add(i);
-                        i.SetVector("_avatarPos", GameManager.instance.currentAvatar.tr.position);
-                        i.SetFloat("_radius", 1.0f);
-                        currShaderDissRadius = i.GetFloat("_radius");
-                    }
-                    else
-                    {
-                        i.SetFloat("_radius", dissolveVal);
-                        i.SetVector("_avatarPos", GameManager.instance.currentAvatar.tr.position);
-                        currShaderDissRadius = i.GetFloat("_radius");
-                    }
-                }
-            }
+            else isColliding = false;
         }
         else // If raycast not picking up anything
         {
             isColliding = false;
-            canIncrDissolveTStamp = true;
-            if (canDecrDissolveTStamp)
-            {
-                canDecrDissolveTStamp = false;
-                decrDissolveTStamp = Time.time;
-                targetDissolveRad = currShaderDissRadius;
-            }
-            float t = (Time.time - decrDissolveTStamp) / delayToFullDissolve;
-            if (dissolvedMats.Count != 0)
-            {
-                dissolveVal = Mathf.SmoothStep(targetDissolveRad, 0.0f, t);
-                foreach (Material i in dissolvedMats)
-                {
-                    i.SetFloat("_radius", dissolveVal);
-                    i.SetVector("_avatarPos", GameManager.instance.currentAvatar.tr.position);
-                    currShaderDissRadius = i.GetFloat("_radius");
-                }
-                if (dissolveVal == 0.0f) dissolvedMats.Clear();
-            }
         }
     }
 
@@ -324,7 +253,7 @@ public class PlayerCamera : MonoBehaviour
             // Parallel ray right of LOS
             rayOrigin = tr.position + (sideRaysdist * tr.right);
             rayDir = camTarget.tr.position - tr.position;
-            if (Physics.Raycast(rayOrigin, rayDir, out hitRight, desiredDollyDst, obstaclesLayerMask) && hitRight.collider.tag != "AllowCameraDissolve")
+            if (Physics.Raycast(rayOrigin, rayDir, out hitRight, desiredDollyDst, obstaclesLayerMask))
             {
                 if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.red);
                 yaw += camCorrectionSpd * Time.deltaTime;
@@ -334,7 +263,7 @@ public class PlayerCamera : MonoBehaviour
             // Parallel ray left of LOS
             rayOrigin = tr.position - (sideRaysdist * tr.right);
             rayDir = camTarget.tr.position - tr.position;
-            if (Physics.Raycast(rayOrigin, rayDir, out hitLeft, desiredDollyDst, obstaclesLayerMask) && hitLeft.collider.tag != "AllowCameraDissolve")
+            if (Physics.Raycast(rayOrigin, rayDir, out hitLeft, desiredDollyDst, obstaclesLayerMask))
             {
                 if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.red);
                 yaw -= camCorrectionSpd * Time.deltaTime;
