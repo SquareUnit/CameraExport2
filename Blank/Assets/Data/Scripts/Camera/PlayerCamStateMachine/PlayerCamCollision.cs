@@ -44,7 +44,7 @@ public class PlayerCamCollision : IStates
         float hyp = (user.desiredCollOffset - 0.01f) / Mathf.Sin(Mathf.Deg2Rad * hitAngle); // Must be smaller than the camera desired collision offset because of float imprecision.
         hitPointDist = Vector3.Distance(user.hit.point, user.camTarget.tr.position);
 
-        user.tr.position = Vector3.SmoothDamp(user.tr.position, user.camTarget.tr.position - user.tr.forward * (hitPointDist - hyp), ref collSV, 0.032f, SmoothMaxSpeed);
+        user.Tr.position = Vector3.SmoothDamp(user.Tr.position, user.camTarget.tr.position - user.Tr.forward * (hitPointDist - hyp), ref collSV, 0.032f, SmoothMaxSpeed);
     }
 
     public void Exit()
