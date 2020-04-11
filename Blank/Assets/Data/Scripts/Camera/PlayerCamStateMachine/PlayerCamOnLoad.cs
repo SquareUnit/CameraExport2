@@ -30,7 +30,7 @@ public class PlayerCamOnLoad : IStates
         if(Time.time - tStamp > timer)
         {
             user.camTarget.tr.position = GameManager.instance.currentAvatar.tr.position;
-            user.tr.position = GameManager.instance.currentAvatar.tr.position - user.tr.forward * user.desiredDollyDst;
+            user.Tr.position = GameManager.instance.currentAvatar.tr.position - user.Tr.forward * user.desiredDollyDst;
             if (user.stateDebugLog) Debug.Log("From sOnLoad to sDefault <color=purple>StateChange</color>");
             user.camFSM.ChangeState(user.defaultState);
             

@@ -6,9 +6,9 @@ public class PlayerCamDefault : IStates
 {
     private PlayerCamera user;
     private Vector3 dollySV;
-    private float camPosSpeed;
-    private float raisePitchValue;
-    private float lowerPitchValue;
+    private float smoothTime;
+    private float raisePitchSpd;
+    private float lowerPitchSpd;
 
     public PlayerCamDefault(PlayerCamera user)
     {
@@ -17,56 +17,57 @@ public class PlayerCamDefault : IStates
 
     public void Enter()
     {
-        if (user.stateDebugLog) Debug.Log("sCamDefault <color=yellow>Enter</color>");
-        lowerPitchValue = 13f;
+        PrintStateLog(0);
+        lowerPitchSpd = 13f;
         dollySV = Vector3.zero;
+        smoothTime = 0.022f;
     }
 
     public void IfStateChange()
     {
         if (InputsManager.instance.camButton)
         {
-            if (user.stateDebugLog) Debug.Log("From sDefault to sReset <color=purple>StateChange</color>");
+            PrintStateLog(1);
             user.camFSM.ChangeState(user.resetState);
         }
         else if (user.isColliding)
         {
-            if (user.stateDebugLog) Debug.Log("From sDefault to sColl <color=purple>StateChange</color>");
+            PrintStateLog(2);
             user.camFSM.ChangeState(user.collisionState);
         }
         else if (GameManager.instance.currentAvatar.velocityY < 0)
         {
-            if (user.stateDebugLog) Debug.Log("From sDefault to sFall <color=purple>StateChange</color>");
+            PrintStateLog(3);
             user.camFSM.ChangeState(user.fallingState);
         }
     }
 
     public void StateUpdate()
     {
-        if (user.stateDebugLog) Debug.Log("sCamDefault <color=blue>Update</color>");
+        PrintStateLog(4);
 
-        LowerPitchAfterFalling();
+        if (user.camFSM.previousState == user.fallingState) RestoreDefaultPitch();
         RaisePitchWhileMoving();
 
-        camPosSpeed = user.camPosSpeed;
-        user.tr.position = Vector3.SmoothDamp(user.tr.position, user.camTarget.tr.position - user.tr.forward * user.desiredDollyDst, ref dollySV, camPosSpeed);
+        user.Tr.position = Vector3.SmoothDamp(user.Tr.position, user.camTarget.tr.position - user.Tr.forward * user.desiredDollyDst, ref dollySV, smoothTime);
     }
 
     public void Exit()
     {
-        if (user.stateDebugLog) Debug.Log("sCamDefault <color=yellow>Exit</color>");
+        PrintStateLog(5);
     }
 
     /// <summary> Slowly lower the camera pitch after falling downward and while in movement
     /// Counter balance a function in the fall state that raise the pitch upward</summary>
-    private void LowerPitchAfterFalling()
+    private void RestoreDefaultPitch()
     {
         if (InputsManager.instance.leftStick != new Vector3(0, 0, 0) && InputsManager.instance.rightStick == new Vector3(0, 0, 0))
         {
-            if (user.camFSM.previousState == user.fallingState && user.pitch > 25.0f && lowerPitchValue > 0)
+            if (user.pitch > 25.0f && lowerPitchSpd > 0)
             {
-                lowerPitchValue -= 0.06f;
-                user.pitch -= lowerPitchValue * Time.deltaTime;
+                lowerPitchSpd -= 0.06f;
+                if(lowerPitchSpd < 4.0f) lowerPitchSpd = 4.0f;
+                user.pitch -= lowerPitchSpd * Time.deltaTime;
             }
         }
     }
@@ -77,17 +78,51 @@ public class PlayerCamDefault : IStates
     {
         if (user.pitch < 15 && InputsManager.instance.rightStick.y > 0)
         {
-            raisePitchValue += 90.0f * Time.deltaTime;
-            if (raisePitchValue >= 800) raisePitchValue = 800;
+            raisePitchSpd += 90.0f * Time.deltaTime;
+            if (raisePitchSpd >= 800) raisePitchSpd = 800;
         }
 
         if (InputsManager.instance.leftStick != new Vector3(0, 0, 0) && InputsManager.instance.rightStick == new Vector3(0, 0, 0))
         {
             if (user.pitch < 15)
             {
-                raisePitchValue *= 0.962f;
-                user.pitch += raisePitchValue * Time.deltaTime;
+                raisePitchSpd *= 0.962f;
+                user.pitch += raisePitchSpd * Time.deltaTime;
             }
         }
     }
+
+    // TODO: Change to proceduraly generated logs using camFSM previous, current and next state.
+    private void PrintStateLog(int a)
+    {
+        if (user.stateDebugLog)
+        {
+            switch (a)
+            {
+                case 0:
+                    Debug.Log("sCamDefault <color=yellow>Enter</color>");
+                    break;
+                case 1:
+                    Debug.Log("From sDefault to sReset <color=purple>StateChange</color>");
+                    break;
+                case 2:
+                    Debug.Log("From sDefault to sColl <color=purple>StateChange</color>");
+                    break;
+                case 3:
+                    Debug.Log("From sDefault to sFall <color=purple>StateChange</color>");
+                    break;
+                case 4:
+                    Debug.Log("sCamDefault <color=blue>Update</color>");
+                    break;
+                case 5:
+                    Debug.Log("sCamDefault <color=yellow>Exit</color>");
+                    break;
+                default:
+                    Debug.Log("Missing log");
+                    break;
+
+            }
+        }
+    }
+
 }

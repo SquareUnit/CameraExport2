@@ -60,7 +60,7 @@ public class PantinInfo : MonoBehaviour
         // look at for the button
         if (interactButton.gameObject.activeInHierarchy)
         {
-            interactButton.transform.LookAt(GameManager.instance.currentCamera.tr);
+            interactButton.transform.LookAt(GameManager.instance.currentCamera.Tr);
         }
 
         // Afficher le bouton interact (X)

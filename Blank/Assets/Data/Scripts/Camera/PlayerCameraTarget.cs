@@ -82,7 +82,7 @@ public class PlayerCameraTarget : MonoBehaviour
     private void SetGamePlayPosition()
     {
         //If avatar moving, stop forward offset to stop wobble
-        if (Physics.SphereCast(animRootPos + yOffset, sphereCastRadius, tr.forward, out sphereCastHit, sphereCastDistance, user.obstaclesMask) && SphereCastHit.collider.tag != "AllowCameraDissolve")
+        if (Physics.SphereCast(animRootPos + yOffset, sphereCastRadius, tr.forward, out sphereCastHit, sphereCastDistance, user.ObstaclesLayerMask) && SphereCastHit.collider.tag != "AllowCameraDissolve")
         {
             tr.position = Vector3.SmoothDamp(tr.position, animRootPos + yOffset, ref targetPosSV, 0.06f, SmoothMaxSpeed);
             debugColor = Color.red;
