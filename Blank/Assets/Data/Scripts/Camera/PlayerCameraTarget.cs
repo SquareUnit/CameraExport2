@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerCameraTarget : MonoBehaviour
 {
-    [HideInInspector] public Transform tr;
-    [HideInInspector] public PlayerCamera user;
-    private float avatarHeight;
+    public Transform tr;
+    public PlayerCamera user;
+    private float baseHeight;
     private Vector3 animRootPos;
-    [HideInInspector] public float verticalDolly;
+    public float verticalDolly;
     private RaycastHit sphereCastHit;
     private float sphereCastRadius = 0.4f;
     private float sphereCastDistance = 0.65f;
@@ -28,21 +28,17 @@ public class PlayerCameraTarget : MonoBehaviour
     public float t;
     public float tStamp;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     public void Start()
     {
+        DontDestroyOnLoad(gameObject);
         tr = transform;
-        avatarHeight = GameManager.instance.currentAvatar.GetComponent<CharacterController>().height;
-        tr.position = new Vector3(tr.position.x, tr.position.y + avatarHeight, tr.position.z);
+        baseHeight = GameManager.instance.currentAvatar.GetComponent<CharacterController>().height;
+        tr.position = new Vector3(tr.position.x, tr.position.y + baseHeight, tr.position.z);
     }
 
     public void LateUpdate()
     {
-        if (GameManager.instance.currentAvatar == enabled || GameManager.instance.currentAvatar != null)
+        if (GameManager.instance.currentAvatar == enabled && GameManager.instance.currentAvatar != null)
         {
             animRootPos = GameManager.instance.currentAvatar.animator.rootPosition;
 
@@ -51,25 +47,28 @@ public class PlayerCameraTarget : MonoBehaviour
             if (user.camFSM.currentState != user.revealState)
             {
                 SetRotation();
-                SetGamePlayPosition();
+                SetPosition();
             }
             else
             {
-                SetRevealPosition();
+                SetCinematicPosition();
             }
         }
     }
 
     private void SetOffsets()
     {
-        /// Define a forward offset value.
+        /// Forward offset value
         forwardOffset = tr.forward * forwardOffsetVal;
         /// Define a desired height for camTarget position
-        if (GameManager.instance.currentAvatar.stateMachine.currentState == GameManager.instance.currentAvatar.stateMachine.crouch)
+        if (GameManager.instance.currentAvatar.stateMachine.currentState != GameManager.instance.currentAvatar.stateMachine.crouch)
         {
-            yOffset.y = avatarHeight + heightAdjustment - 0.75f;
+            yOffset.y = baseHeight + heightAdjustment + verticalDolly;
         }
-        else yOffset.y = avatarHeight + heightAdjustment + verticalDolly;
+        else
+        {
+            yOffset.y = baseHeight + heightAdjustment - 0.75f;
+        }
     }
 
     /// <summary> Pass the info down to those who needs it </summary>
@@ -79,10 +78,10 @@ public class PlayerCameraTarget : MonoBehaviour
     }
 
     // Position handling if the camera is not in reveal state
-    private void SetGamePlayPosition()
+    private void SetPosition()
     {
-        //If avatar moving, stop forward offset to stop wobble
-        if (Physics.SphereCast(animRootPos + yOffset, sphereCastRadius, tr.forward, out sphereCastHit, sphereCastDistance, user.ObstaclesLayerMask) && SphereCastHit.collider.tag != "AllowCameraDissolve")
+        // If there is an object in front of avatar, do not offset camTarget forward or will will be on the other side of the wall
+        if (Physics.SphereCast(animRootPos + yOffset, sphereCastRadius, tr.forward, out sphereCastHit, sphereCastDistance, user.ObstaclesLayerMask))
         {
             tr.position = Vector3.SmoothDamp(tr.position, animRootPos + yOffset, ref targetPosSV, 0.06f, SmoothMaxSpeed);
             debugColor = Color.red;
@@ -94,8 +93,8 @@ public class PlayerCameraTarget : MonoBehaviour
         }
     }
 
-    // Position handling if the camera is in reveal state
-    private void SetRevealPosition()
+    // Position handling if the camera is in cinematic state
+    private void SetCinematicPosition()
     {
         if (!user.revealState.revealStartDone)
         {
@@ -122,7 +121,8 @@ public class PlayerCameraTarget : MonoBehaviour
         }
     }
 
-    public RaycastHit SphereCastHit {
+    public RaycastHit SphereCastHit 
+    {
         get { return sphereCastHit; }
     }
 }

@@ -93,28 +93,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf36d9a898b51f34cb0fd62428002498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tr: {fileID: 0}
   camera: {fileID: 0}
   playerCamTarget: {fileID: 4742362636443896044, guid: 6d8aad6d9f188024d80858a5dac57f71,
     type: 3}
   camTarget: {fileID: 0}
-  obstaclesMask:
-    serializedVersion: 2
-    m_Bits: 0
+  camObstacleLayers:
+  - Obstacles
+  - 
+  - 
   camFSM: {fileID: 0}
   avatarFSM: {fileID: 0}
   camFOV: 60
   yaw: 0
   pitch: 0
-  camPosSpeed: 0.022
   pitchMinMax: {x: -25, y: 60}
   rotationSV: {x: 0, y: 0, z: 0}
-  lowPassFilter: {fileID: 0}
-  desiredCollOffset: 0.5
-  isColliding: 0
   desiredDollyDst: 0
   camDollyMinDist: 2.4
   camDollyMaxDist: 5
+  desiredCollOffset: 0.5
+  isColliding: 0
   camAxisInUse: 0
   stateDebugLog: 0
   raycastsDebug: 1

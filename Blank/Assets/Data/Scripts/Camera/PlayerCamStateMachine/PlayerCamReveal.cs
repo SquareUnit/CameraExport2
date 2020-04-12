@@ -34,7 +34,8 @@ public class PlayerCamReveal : IStates
     {
         if (user.stateDebugLog) Debug.Log("sCamReveal <color=yellow> Enter </color>");
         InputsManager.instance.gameplayInputsAreDisabled = true;
-        user.pitchMinMax = new Vector2(-89.0f, 89.0f);
+        user.pitchMin = -89.0f;
+        user.pitchMax = 89.0f;
         // Print initial pitch and yaw
         lastPitch = user.pitch;
         lastYaw = user.yaw;
@@ -121,6 +122,7 @@ public class PlayerCamReveal : IStates
     {
         if (user.stateDebugLog) Debug.Log("sCamReveal <color=yellow> Exit </color>");
         InputsManager.instance.gameplayInputsAreDisabled = false;
-        user.pitchMinMax = new Vector2(-25.0f, 60.0f);
+        user.pitchMin = -25.0f;
+        user.pitchMax = 60.0f;
     }
 }

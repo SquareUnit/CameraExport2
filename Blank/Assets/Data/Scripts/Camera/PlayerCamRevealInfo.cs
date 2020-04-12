@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerCamRevealInfo : MonoBehaviour
 {
-    
     [HideInInspector] public Vector3 camTargetStartPos;
     [Header("Hover on var names to display tooltips")]
     [Tooltip("Leave empty if you just want the camera rotation to move")]

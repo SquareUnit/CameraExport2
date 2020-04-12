@@ -16,7 +16,7 @@ public class PlayerCamera : MonoBehaviour
     [HideInInspector] public new Camera camera;
     [HideInInspector] public PlayerCameraTarget playerCamTarget;
     [HideInInspector] public PlayerCameraTarget camTarget;
-    public string[] camObstacleLayers = new string[0];
+    public string[] camObstacleLayers = new string[3];
     private LayerMask obstaclesLayerMask;
     private bool loadingDone = false;
 
@@ -31,21 +31,29 @@ public class PlayerCamera : MonoBehaviour
 
     [HideInInspector] public CharacterState avatarFSM;
 
-    [SerializeField]
-    private int health;
-    public int Health => health;
-
-
     public float camFOV = 60.0f;
-    public float yaw;
-    public float pitch;
+    public float yaw, pitch;
     [NonSerialized] public float smoothTime = 0.022f;
-    private float camYawSensitivity = 10.0f, camPitchSensitivity = 10.0f;
-    [HideInInspector] public Vector2 pitchMinMax = new Vector2(-25, 60);
+    private float yawSensitivity = 126.0f;
+    private float yawAutoSensitivity = 68.0f;
+    private float pitchSensitivity = 110.0f;
+
+    public float pitchMin = -25.0f;
+    public float pitchMax = 60.0f;
 
     private Vector3 currRotation, desiredRotation;
     [HideInInspector] public Vector3 rotationSV;
     private float a1, b1, a2, b2;
+
+    // Camera dolly params
+    [HideInInspector] public float desiredDollyDst;
+    [HideInInspector] public float camDollyMinDist = 2.4f;
+    [HideInInspector] public float camDollyMaxDist = 5.0f;
+
+    // Camera height Offset params
+    private float desiredYOffset;
+    private float camTargetMinYOffset = 0.0f;
+    private float camTargetMaxYOffset = 0.15f;
 
     // Collision params
     private Vector3 dirToCamera;
@@ -55,23 +63,13 @@ public class PlayerCamera : MonoBehaviour
     [HideInInspector] public bool isColliding;
 
     // Sideray's params
-    private RaycastHit hitRight;
-    private RaycastHit hitLeft;
+    private RaycastHit hitRight, hitLeft;
 
-    // Camera dolly params
-    [HideInInspector] public float desiredDollyDst;
-    [HideInInspector] public float camDollyMinDist = 2.4f;
-    [HideInInspector] public float camDollyMaxDist = 5.0f;
-
-    // Camera yOffset params
-    private float desiredYOffset;
-    private float targetMinYOffset = 0.0f;
-    private float targetMaxYOffset = 0.15f;
-
+    // Other
     [HideInInspector] public bool camAxisInUse;
-
     public bool stateDebugLog;
     public bool raycastsDebug = true;
+
 
     private void Awake()
     {
@@ -83,9 +81,8 @@ public class PlayerCamera : MonoBehaviour
         tr = transform;
         camera = GetComponent<Camera>();
         camera.fieldOfView = camFOV;
-        UIManager.instance.refCamera = camera;
         avatarFSM = GameManager.instance.currentAvatar.GetComponent<CharacterState>();
-        obstaclesLayerMask = LayerMask.GetMask("Obstacles");
+        obstaclesLayerMask = LayerMask.GetMask(camObstacleLayers[0], camObstacleLayers[1], camObstacleLayers[2]);
         SetCamDollyParams();
 
         camFSM = GetComponent<StateMachine>();
@@ -104,7 +101,6 @@ public class PlayerCamera : MonoBehaviour
     private IEnumerator WaitForLoading(float delay)
     {
         yield return new WaitForSeconds(delay);
-        tr.eulerAngles = GameManager.instance.currentAvatar.transform.rotation.eulerAngles;
         camTarget = Instantiate(playerCamTarget, GameManager.instance.spcLvlMan.playerStart, GameManager.instance.spcLvlMan.playerStartRotation);
         camTarget.user = this;
         camFSM.ChangeState(defaultState);
@@ -124,43 +120,38 @@ public class PlayerCamera : MonoBehaviour
 
     private void UpdateCamera()
     {
-        CameraGetInputs();
-        CameraVerticalDolly();
+        if(InputsManager.instance.cameraInputsAreDisabled == false) SetYawAndPitch();
+        CamTargetVerticalDolly();
         CameraOrientation();
-        CameraHorizontalDolly();
-        IsCameraBeingUsed();
+        CameraForwardBackwardDolly();
         IsCamViewBlocked();
         if (!isColliding) CameraSideRays();
     }
 
-    private void CameraGetInputs()
+    private void SetYawAndPitch()
     {
-        /// Setup yaw. Will use movement axis if camera not being used, else only use camera axis.
+        // If camera stick not in use, use yaw for cam movements. Else, use camera stick.
         if (InputsManager.instance.rightStick.x > 0)
         {
-            yaw += Mathf.Pow(InputsManager.instance.rightStick.x * camYawSensitivity, 2.1f) * Time.deltaTime;
+            yaw += InputsManager.instance.rightStick.x * yawSensitivity * Time.deltaTime;
         }
         if (InputsManager.instance.rightStick.x < 0)
         {
-            yaw += -(Mathf.Pow(Mathf.Abs(InputsManager.instance.rightStick.x) * camYawSensitivity, 2.1f)) * Time.deltaTime;
+            yaw -= Mathf.Abs(InputsManager.instance.rightStick.x) * yawSensitivity * Time.deltaTime;
         }
 
-        if (InputsManager.instance.rightStick.x == 0
-            && InputsManager.instance.leftStick.x >= 0.25
-            && InputsManager.instance.cameraInputsAreDisabled == false)
+        if (InputsManager.instance.rightStick.x == 0 && InputsManager.instance.leftStick.x >= 0.25)
         {
-            yaw += Mathf.Pow(InputsManager.instance.leftStick.x * 2.5f, 4.6f) * Time.deltaTime;
+            yaw += InputsManager.instance.leftStick.x * yawAutoSensitivity * Time.deltaTime;
         }
-        if (InputsManager.instance.rightStick.x == 0
-            && InputsManager.instance.leftStick.x <= -0.25
-            && InputsManager.instance.cameraInputsAreDisabled == false)
+        if (InputsManager.instance.rightStick.x == 0 && InputsManager.instance.leftStick.x <= -0.25)
         {
-            yaw += -(Mathf.Pow(Mathf.Abs(InputsManager.instance.leftStick.x) * 2.5f, 4.6f)) * Time.deltaTime;
+            yaw -= Mathf.Abs(InputsManager.instance.leftStick.x) * yawAutoSensitivity * Time.deltaTime;
         }
 
         if (camFSM.currentState != revealState)
         {
-            //Changger pour predictif
+
             if (yaw > 360.0f)
             {
                 yaw -= 360.0f;
@@ -172,16 +163,17 @@ public class PlayerCamera : MonoBehaviour
                 currRotation = new Vector3(currRotation.x, currRotation.y + 360, currRotation.z);
             }
         }
-        /// Setup pitch and clamp it
-        pitch -= InputsManager.instance.rightStick.y * Mathf.Pow(camPitchSensitivity, 2.0f) * Time.deltaTime;
-        pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
+
+        // Setup pitch and clamp it
+        pitch -= InputsManager.instance.rightStick.y * pitchSensitivity * Time.deltaTime;
+        pitch = Mathf.Clamp(pitch, pitchMin, pitchMax);
     }
 
-    /// <summary> Dolly the camera upward or downward depending on the pitch. Linear function start dollying below 0 </summary>
-    private void CameraVerticalDolly()
+    /// <summary> Dolly the cam target upward or downward depending on the camera pitch. Linear function start dollying below 0 </summary>
+    private void CamTargetVerticalDolly()
     {
         desiredYOffset = a2 * pitch + b2;
-        camTarget.verticalDolly = Mathf.Clamp(desiredYOffset, targetMinYOffset, targetMaxYOffset);
+        camTarget.verticalDolly = Mathf.Clamp(desiredYOffset, camTargetMinYOffset, camTargetMaxYOffset);
     }
 
     ///<summary> Set up the camera orientation </summary>
@@ -193,13 +185,14 @@ public class PlayerCamera : MonoBehaviour
     }
 
     /// <summary> Dolly the camera forward or backward depending on the pitch. Linear function start dollying below 0 </summary>
-    private void CameraHorizontalDolly()
+    private void CameraForwardBackwardDolly()
     {
         desiredDollyDst = a1 * pitch + b1;
         desiredDollyDst = Mathf.Clamp(desiredDollyDst, camDollyMinDist, camDollyMaxDist);
     }
 
     /// <summary> Verify if the player is actively manipulating the camera with the right stick axis </summary>
+    /// NOT CURRENTLY USED
     private void IsCameraBeingUsed()
     {
         if (InputsManager.instance.rightStick.x == 0 && InputsManager.instance.rightStick.y == 0) camAxisInUse = false;
@@ -226,7 +219,7 @@ public class PlayerCamera : MonoBehaviour
         }
     }
 
-    /// <summary> Check if the collsion distance small enough for it to be considered valid for camera wall hoovering behaviour?</summary>
+    /// <summary> Check if the collsion distance small enough for it to be considered valid for camera wall hoovering behaviour</summary>
     public void IsCollisionValid()
     {
         Vector3 hitToCamDir = camTarget.tr.position - hit.point;
@@ -250,9 +243,10 @@ public class PlayerCamera : MonoBehaviour
 
         if (InputsManager.instance.PlayerIsMovingAvatar)
         {
-            // Parallel ray right of LOS
+            // Right parallel ray
             rayOrigin = tr.position + (sideRaysdist * tr.right);
             rayDir = camTarget.tr.position - tr.position;
+
             if (Physics.Raycast(rayOrigin, rayDir, out hitRight, desiredDollyDst, obstaclesLayerMask))
             {
                 if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.red);
@@ -260,9 +254,10 @@ public class PlayerCamera : MonoBehaviour
             }
             else if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.green);
 
-            // Parallel ray left of LOS
+            // Left parallel ray
             rayOrigin = tr.position - (sideRaysdist * tr.right);
             rayDir = camTarget.tr.position - tr.position;
+
             if (Physics.Raycast(rayOrigin, rayDir, out hitLeft, desiredDollyDst, obstaclesLayerMask))
             {
                 if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.red);
@@ -275,12 +270,13 @@ public class PlayerCamera : MonoBehaviour
     /// <summary> Determin how the forward/backward dolly and vertical offset will move the camera, depending on the parameters </summary>
     private void SetCamDollyParams()
     {
-        // Forward / backward dolly setup
-        a1 = (camDollyMinDist - camDollyMaxDist) / pitchMinMax.x;
+        // Forward/backward dolly
+        a1 = (camDollyMinDist - camDollyMaxDist) / pitchMin;
         b1 = camDollyMaxDist;
-        // Vertical offset setup
-        a2 = (targetMaxYOffset - targetMinYOffset) / pitchMinMax.x;
-        b2 = targetMinYOffset;
+
+        // Upward/Downward setup
+        a2 = (camTargetMaxYOffset - camTargetMinYOffset) / pitchMin;
+        b2 = camTargetMinYOffset;
     }
 
     public Transform Tr
@@ -294,8 +290,7 @@ public class PlayerCamera : MonoBehaviour
     }
 }
 
-// Tool used to detect the nature of what we are colliding with. Help us debug and find the culprit
-// when the camera act unpredictably.
+// Tool used to detect the nature of what the camera target is colliding with in front of the avatar.
 #if UNITY_EDITOR
 [CustomEditor(typeof(PlayerCamera))]
 public class PlayerCameraDebugTool : Editor
@@ -307,9 +302,12 @@ public class PlayerCameraDebugTool : Editor
 
         if (GUILayout.Button("Get collision name"))
         {
-            Debug.Log(user.camTarget.SphereCastHit.collider.transform.root.name + " : is root");
-            Debug.Log(user.camTarget.SphereCastHit.collider.transform.parent.name + " : is direct parent");
-            Debug.Log(user.camTarget.SphereCastHit.collider.gameObject.layer.ToString() + " : is layer hit");
+            Debug.Log("Object " + user.camTarget.SphereCastHit.collider.transform.root.name + " is root of collision");
+            if(user.camTarget.SphereCastHit.collider.transform.parent != null)
+            {
+                Debug.Log(user.camTarget.SphereCastHit.collider.transform.parent.name + " : is direct parent");
+            }
+            Debug.Log("Hitting the layer number " + user.camTarget.SphereCastHit.collider.gameObject.layer.ToString());
         }
     }
 }
