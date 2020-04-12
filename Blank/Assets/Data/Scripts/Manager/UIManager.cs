@@ -39,7 +39,6 @@ public class UIManager : MonoBehaviour, ISelectHandler
 
 
     //camera
-    public Camera refCamera;
     public Camera camUI;
 
 
