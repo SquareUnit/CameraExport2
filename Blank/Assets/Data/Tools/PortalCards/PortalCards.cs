@@ -43,7 +43,7 @@ public class PortalCards : MonoBehaviour
         {
            //rd.material.mainTextureScale = new Vector2(stretchUVX, stretchUVY);
             //rd.material.mainTextureOffset = new Vector2(stretchUVX , stretchUVY) ;
-            distanceToCam = Vector3.Distance(tr.position, GameManager.instance.currentCamera.Tr.position);
+            distanceToCam = Vector3.Distance(tr.position, GameManager.instance.currentCamera.tr.position);
             if (distanceToCam <= minFadeDistance)
             {
                 color[0].a = alphaHori * distanceToCam / minFadeDistance;

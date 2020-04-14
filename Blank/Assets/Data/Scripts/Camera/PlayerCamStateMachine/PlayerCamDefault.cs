@@ -49,7 +49,7 @@ public class PlayerCamDefault : IStates
         if (user.camFSM.previousState == user.fallingState) RestoreDefaultPitch();
         RaisePitchWhileMoving();
 
-        user.Tr.position = Vector3.SmoothDamp(user.Tr.position, user.camTarget.tr.position - user.Tr.forward * user.desiredDollyDst, ref dollySV, smoothTime);
+        user.tr.position = Vector3.SmoothDamp(user.tr.position, user.camTarget.tr.position - user.tr.forward * user.desiredDollyDst, ref dollySV, smoothTime);
     }
 
     public void Exit()

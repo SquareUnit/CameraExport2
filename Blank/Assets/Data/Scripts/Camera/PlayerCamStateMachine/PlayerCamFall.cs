@@ -42,7 +42,7 @@ public class PlayerCamFall : IStates
 
         RaisePitchIfObstacle();
 
-        user.Tr.position = Vector3.SmoothDamp(user.Tr.position, user.camTarget.tr.position - user.Tr.forward * user.desiredDollyDst, ref dollySV, smoothTime + 0.003f);
+        user.tr.position = Vector3.SmoothDamp(user.tr.position, user.camTarget.tr.position - user.tr.forward * user.desiredDollyDst, ref dollySV, smoothTime + 0.003f);
     }
 
     public void Exit()
@@ -54,8 +54,8 @@ public class PlayerCamFall : IStates
     /// This is all made to try to avoid a transition to the collision state while falling, if & when possible</summary>
     private void RaisePitchIfObstacle()
     {
-        Vector3 camDownStart = user.Tr.position - (1.6f * user.Tr.up);
-        Vector3 camDownEnd = user.camTarget.tr.position - user.Tr.position;
+        Vector3 camDownStart = user.tr.position - (1.6f * user.tr.up);
+        Vector3 camDownEnd = user.camTarget.tr.position - user.tr.position;
         
         if (Physics.Raycast(camDownStart, camDownEnd, out hit, user.desiredDollyDst, user.ObstaclesLayerMask) && hit.collider.tag != "AllowCameraDissolve")
         {

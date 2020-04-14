@@ -105,7 +105,7 @@ public class Cabestan : Triggerable
     void Update()
     {
         // look at for the button
-        if (interactButton.gameObject.activeInHierarchy) { interactButton.transform.LookAt(GameManager.instance.currentCamera.Tr); }
+        if (interactButton.gameObject.activeInHierarchy) { interactButton.transform.LookAt(GameManager.instance.currentCamera.tr); }
 
         // Afficher le bouton interact (X)
         if (canInteract && !asBeenTurned && door != null)

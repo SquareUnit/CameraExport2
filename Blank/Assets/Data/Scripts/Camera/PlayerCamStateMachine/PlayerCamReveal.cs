@@ -85,7 +85,7 @@ public class PlayerCamReveal : IStates
                 if (user.stateDebugLog) Debug.Log("sCamReveal <color=red>StartReveal</color>");
                 user.pitch = Mathf.Lerp(lastPitch, info.desiredPitch, t);
                 user.yaw = Mathf.Lerp(lastYaw, refYaw, t);
-                user.Tr.position = Vector3.SmoothDamp(user.Tr.position, user.camTarget.tr.position - user.Tr.forward * user.desiredDollyDst, ref resetSV, 0.025f);
+                user.tr.position = Vector3.SmoothDamp(user.tr.position, user.camTarget.tr.position - user.tr.forward * user.desiredDollyDst, ref resetSV, 0.025f);
             }
             else revealStartDone = true;
         }
@@ -112,7 +112,7 @@ public class PlayerCamReveal : IStates
                 if (user.stateDebugLog) Debug.Log("sCamReveal <color=red>EndReveal</color>");
                 user.pitch = Mathf.Lerp(info.desiredPitch, lastPitch, t);
                 user.yaw = Mathf.Lerp(refYaw, lastYaw, t);
-                user.Tr.position = Vector3.SmoothDamp(user.Tr.position, user.camTarget.tr.position - user.Tr.forward * user.desiredDollyDst, ref resetSV, 0.025f);
+                user.tr.position = Vector3.SmoothDamp(user.tr.position, user.camTarget.tr.position - user.tr.forward * user.desiredDollyDst, ref resetSV, 0.025f);
             }
             else user.camFSM.ChangeState(user.defaultState);
         }

@@ -195,7 +195,7 @@ public class CheatMenu : MonoBehaviour
         //Rotation selon les mouvements
         if (moveDirection.magnitude != 0f)
         {
-            targetRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg + GameManager.instance.currentCamera.Tr.eulerAngles.y;
+            targetRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg + GameManager.instance.currentCamera.tr.eulerAngles.y;
             GameManager.instance.currentAvatar.tr.eulerAngles = Vector3.up * targetRotation;
 
             //Implementation du mouvement
