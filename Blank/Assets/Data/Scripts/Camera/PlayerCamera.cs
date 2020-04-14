@@ -12,7 +12,7 @@ using UnityEditor;
 
 public class PlayerCamera : MonoBehaviour
 {
-    private Transform tr;
+    public Transform tr;
     [HideInInspector] public new Camera camera;
     [HideInInspector] public PlayerCameraTarget playerCamTarget;
     [HideInInspector] public PlayerCameraTarget camTarget;
@@ -60,7 +60,7 @@ public class PlayerCamera : MonoBehaviour
     private Collider lastCollFound;
     [HideInInspector] public RaycastHit hit;
     [HideInInspector] public float desiredCollOffset = 0.5f;
-    [HideInInspector] public bool isColliding;
+    public bool isColliding;
 
     // Sideray's params
     private RaycastHit hitRight, hitLeft;
@@ -124,8 +124,8 @@ public class PlayerCamera : MonoBehaviour
         CamTargetVerticalDolly();
         CameraOrientation();
         CameraForwardBackwardDolly();
-        IsCamViewBlocked();
-        if (!isColliding) CameraSideRays();
+        IsCamColliding();
+        CameraSideRays(3.0f);
     }
 
     private void SetYawAndPitch()
@@ -200,11 +200,12 @@ public class PlayerCamera : MonoBehaviour
     }
 
     /// <summary> Check if there is a valid collision </summary>
-    private void IsCamViewBlocked()
+    private void IsCamColliding()
     {
         dirToCamera = tr.position - camTarget.tr.position;
-        if (raycastsDebug) Debug.DrawRay(camTarget.transform.position, dirToCamera, Color.white);
-        if (Physics.Raycast(camTarget.tr.position, dirToCamera, out hit, camDollyMaxDist, obstaclesLayerMask))
+        if (raycastsDebug) Debug.DrawRay(camTarget.transform.position, dirToCamera, Color.gray);
+        //if (Physics.SphereCast(camTarget.tr.position, 0.10f,  dirToCamera, out hit, camDollyMaxDist, obstaclesLayerMask)) TODO: Integrate sphere cast
+        if (Physics.Raycast(camTarget.tr.position, dirToCamera, out hit, camDollyMaxDist * 2, obstaclesLayerMask))
         {
             float product = Vector3.Dot(hit.normal, Vector3.up);
             if (product <= 0.3 && product >= -0.3) //TODO : Handle ceilings(|| hit.normal.y < 0))
@@ -219,12 +220,12 @@ public class PlayerCamera : MonoBehaviour
         }
     }
 
-    /// <summary> Check if the collsion distance small enough for it to be considered valid for camera wall hoovering behaviour</summary>
+    /// <summary> Check if the collsion distance is small enough for it to be considered valid for camera wall hoovering behaviour</summary>
     public void IsCollisionValid()
     {
-        Vector3 hitToCamDir = camTarget.tr.position - hit.point;
-        hitToCamDir.y = 0.0f;
-        float hitAngle = Vector3.Angle(hit.normal, hitToCamDir);
+        Vector3 hitToCamTarget = camTarget.tr.position - hit.point;
+        hitToCamTarget.y = 0.0f;
+        float hitAngle = Vector3.Angle(hit.normal, hitToCamTarget);
         float hitToCamDist = Vector3.Distance(hit.point, camTarget.tr.position) - desiredDollyDst;
         float wallToCamDist = Mathf.Sin(Mathf.Deg2Rad * hitAngle) * hitToCamDist;
 
@@ -232,38 +233,46 @@ public class PlayerCamera : MonoBehaviour
         else isColliding = false;
     }
 
-    /// <summary> Cast two rays parallel to the camera LOS. Nudge the camera away from wall collisions </summary>
-    private void CameraSideRays()
+    /// <summary> Cast rays parallel to the camera forward vector. Nudge the camera yaw in the opposite direction if one or multiple collides. </summary>
+    private void CameraSideRays(float sideRayCount)
     {
-        Vector3 rayOrigin;
-        Vector3 rayDir;
-        float camCorrectionSpd = 60 * (1 + Mathf.Abs(InputsManager.instance.leftStick.x));
-        float sideRaysdist = 1.2f * Mathf.Abs(InputsManager.instance.leftStick.x);
-        // if (GameManager.instance.debugTimer % 10 == 0) Debug.Log("Speed : " + camCorrectionSpd + "Distance : " + sideRaysdist);
-
-        if (InputsManager.instance.PlayerIsMovingAvatar)
+        if (InputsManager.instance.PlayerIsMovingAvatar && !isColliding) 
         {
-            // Right parallel ray
-            rayOrigin = tr.position + (sideRaysdist * tr.right);
-            rayDir = camTarget.tr.position - tr.position;
+            Vector3 rayOrigin;
+            Vector3 rayDir;
+            float latMovSpd = Mathf.Abs(InputsManager.instance.leftStick.x);
+            float correctionSpd = 35;
+            float rayMaxOffset = 1.2f;
 
-            if (Physics.Raycast(rayOrigin, rayDir, out hitRight, desiredDollyDst, obstaclesLayerMask))
+            for(int i = 1; i <= sideRayCount; i++)
             {
-                if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.red);
-                yaw += camCorrectionSpd * Time.deltaTime;
-            }
-            else if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.green);
+                // Rays position and yaw adjustment str
+                float raysLateralOffsets = latMovSpd * rayMaxOffset * i/sideRayCount;
+                float yawAdjustment = (1 + latMovSpd) * correctionSpd * i/sideRayCount;
 
-            // Left parallel ray
-            rayOrigin = tr.position - (sideRaysdist * tr.right);
-            rayDir = camTarget.tr.position - tr.position;
+                // Right parallel ray
+                rayOrigin = tr.position + (raysLateralOffsets * tr.right);
+                rayDir = camTarget.tr.position - tr.position - (tr.forward * i/sideRayCount);
+                float raylenght =  rayDir.magnitude;
 
-            if (Physics.Raycast(rayOrigin, rayDir, out hitLeft, desiredDollyDst, obstaclesLayerMask))
-            {
-                if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.red);
-                yaw -= camCorrectionSpd * Time.deltaTime;
+                if (Physics.Raycast(rayOrigin, rayDir, out hitRight, raylenght, obstaclesLayerMask))
+                {
+                    if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.red);
+                    yaw += yawAdjustment * Time.deltaTime;
+                }
+                else if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.green);
+
+                // Left parallel ray
+                rayOrigin = tr.position - (raysLateralOffsets * tr.right);
+                rayDir = camTarget.tr.position - tr.position - (tr.forward * i / sideRayCount);
+
+                if (Physics.Raycast(rayOrigin, rayDir, out hitLeft, raylenght, obstaclesLayerMask))
+                {
+                    if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.red);
+                    yaw -= yawAdjustment * Time.deltaTime;
+                }
+                else if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.green);
             }
-            else if (raycastsDebug) Debug.DrawRay(rayOrigin, rayDir, Color.green);
         }
     }
 
@@ -277,11 +286,6 @@ public class PlayerCamera : MonoBehaviour
         // Upward/Downward setup
         a2 = (camTargetMaxYOffset - camTargetMinYOffset) / pitchMin;
         b2 = camTargetMinYOffset;
-    }
-
-    public Transform Tr
-    {
-        get { return tr;}
     }
 
     public LayerMask ObstaclesLayerMask 

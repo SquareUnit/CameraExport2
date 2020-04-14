@@ -98,7 +98,7 @@ MonoBehaviour:
     type: 3}
   camTarget: {fileID: 0}
   camObstacleLayers:
-  - Obstacles
+  - CamColliders
   - 
   - 
   camFSM: {fileID: 0}
@@ -106,7 +106,8 @@ MonoBehaviour:
   camFOV: 60
   yaw: 0
   pitch: 0
-  pitchMinMax: {x: -25, y: 60}
+  pitchMin: -25
+  pitchMax: 60
   rotationSV: {x: 0, y: 0, z: 0}
   desiredDollyDst: 0
   camDollyMinDist: 2.4

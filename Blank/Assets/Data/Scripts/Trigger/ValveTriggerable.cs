@@ -68,11 +68,11 @@ public class ValveTriggerable : Triggerable
             {
                 // look at for the button
                 if (interactButton.gameObject.activeInHierarchy)
-                    interactButton.transform.LookAt(GameManager.instance.currentCamera.Tr);
+                    interactButton.transform.LookAt(GameManager.instance.currentCamera.tr);
 
                 // test look at bouton temporaire
                 if (pantinBouttonValve.activeInHierarchy)
-                    pantinBouttonValve.transform.LookAt(GameManager.instance.currentCamera.Tr);
+                    pantinBouttonValve.transform.LookAt(GameManager.instance.currentCamera.tr);
 
                 // Afficher le bouton interact (X)
                 if (isActivate && avatar.stateMachine.currentState != avatar.stateMachine.interact)

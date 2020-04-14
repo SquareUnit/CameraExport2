@@ -23,7 +23,7 @@ public class StateMachine : MonoBehaviour
         currentState.Enter();
     }
 
-    /// <summary>Contains all logic that verify if current state should be playing it's execute or change to a new state</summary>
+    /// <summary>Contains all logic that verify if current state should be playing it's execute or imediately change to a new state</summary>
     public void CheckIfStateChange()
     {
         if (currentState != null)

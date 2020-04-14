@@ -438,12 +438,10 @@ public class InputsManager : MonoBehaviour
         bumperLeft = false;
         bumperRight = false;
     }
-    /// <summary>
-    /// Active la vibration du controller
-    /// </summary>
-    /// <param name="motorLevel"> Puissance du motor (0 a 1f) </param>
-    /// <param name="time"> Duree en secondes </param>
-    /// <param name="stopOtherMotors"> Stop les autres vibrations </param>
+    /// <summary> Active la vibration du controller </summary>
+    /// <param name="motorLevel"> Motor Power [0.0f, 1.0f] </param>
+    /// <param name="time"> Duration in seconds </param>
+    /// <param name="stopOtherMotors"> Stop other motors </param>
     public void SetVibration(float motorLevel, float time, bool stopOtherMotors)
     {
         player.SetVibration(0, motorLevel, time, stopOtherMotors);

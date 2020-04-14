@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
         Scene startScene = SceneManager.GetActiveScene();
         QualitySettings.vSyncCount = 0;
         soundRelay = GetComponent<SoundRelay>();
+        //Time.timeScale = 0.25f;
         
 
         if (startScene.name != "MainMenu")

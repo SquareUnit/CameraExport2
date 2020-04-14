@@ -32,7 +32,7 @@ public class ValvesLvl9Section2_3 : Triggerable {
         }
 
         //look at for the button
-        if (interactButton.gameObject.activeInHierarchy) { interactButton.transform.LookAt(GameManager.instance.currentCamera.Tr); }
+        if (interactButton.gameObject.activeInHierarchy) { interactButton.transform.LookAt(GameManager.instance.currentCamera.tr); }
 
         //Afficher le bouton interact(X)
         if (isActivate)

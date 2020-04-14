@@ -41,7 +41,7 @@ public class PlayerCamReset : IStates
 
         user.pitch = Mathf.Lerp(user.pitch, 15.0f, 0.10f);
         user.yaw = Mathf.LerpAngle(user.yaw, user.camTarget.tr.rotation.eulerAngles.y, 0.10f);
-        user.Tr.position = Vector3.SmoothDamp(user.Tr.position, user.camTarget.tr.position - user.Tr.forward * user.desiredDollyDst, ref resetSV, 0.025f);
+        user.tr.position = Vector3.SmoothDamp(user.tr.position, user.camTarget.tr.position - user.tr.forward * user.desiredDollyDst, ref resetSV, 0.025f);
     }
 
     public void Exit()
